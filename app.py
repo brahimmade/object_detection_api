@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(
     title = "Vision-based object detection API",
     description = """ Vision-based vehicle and people detection. 
-    Response is in JSON format or in image formato with labels""",
+    Response is in JSON format or in image format with labels""",
     version = "1.0.0",
 )
 
