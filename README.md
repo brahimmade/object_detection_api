@@ -3,17 +3,14 @@
 
 ## Table of contents
 
-**[0. Quickstart](#1-Quickstart)**
 
-**[1. Introduction](#1-Introduction)**
+**[1. Introduction](#1.-Introduction)**
 
-**[2. Object detection model](#2-Object-detection-model)**
+**[2. Object detection model](#2.-Object-detection-model)**
 
-**[3. Web service](#4-Web-service)**
+**[3. Web service](#3.-Web-service)**
 
-**[4. References](#4-References)**
-
-## 0. Quickstart
+**[4. References](#4.-References)**
 
 
 ## <div align="center">Quick Start methods</div>
@@ -62,8 +59,6 @@ Finally, go to [http://localhost:8000/docs](http://localhost:8000/docs), check t
 
 </details>
 
-
-
 ## 1. Introduction
 The purpose of this exercise is the development of a local service (TODO online Service) for image object detection, specifically for car and people detection. This service will have as input an image and will provide an output in JSON format with the detection of cars and people. Additionally, the service provides an extra output in image format with labels of the detections.
 
@@ -77,7 +72,7 @@ Main keys of the project:
 
 ## 2. Object detection model
 
-The artificial intelligence model used in the development of this object detection service is the YOLOv5 model: **[YOLOv5](https://github.com/ultralytics/yolov5)** is a family of object detection architectures and models pretrained on the **[COCO dataset](https://cocodataset.org/#home)**
+The artificial intelligence model used in the development of this object detection service is the YOLOv5 model: **[YOLOv5](https://github.com/ultralytics/yolov5)** is a family of object detection architectures and models pre-trained on the **[COCO dataset](https://cocodataset.org/#home)**
 
 **YOLO**, an acronym for "You only look once", is an object detection algorithm that divides images into a grid network. Each grid cell is responsible for detecting objects within the grid.
 
@@ -92,7 +87,7 @@ Se ha seleccionado el modelo mediando debido a su alto rendimiento y eficiencia 
 <details open>
   <summary>YOLOv5-P5 640 Figure</summary>
 
-#### Pretrained Checkpoints
+#### Pre-trained Checkpoints
 
 | Model                                                                                                | size<br><sup>(pixels) | mAP<sup>val<br>0.5:0.95 | mAP<sup>val<br>0.5 | Speed<br><sup>CPU b1<br>(ms) | Speed<br><sup>V100 b1<br>(ms) | Speed<br><sup>V100 b32<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>@640 (B) |
 |------------------------------------------------------------------------------------------------------|-----------------------|-------------------------|--------------------|------------------------------|-------------------------------|--------------------------------|--------------------|------------------------|
@@ -109,12 +104,12 @@ Se ha seleccionado el modelo mediando debido a su alto rendimiento y eficiencia 
 | [YOLOv5x6](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5x6.pt)<br>+ [TTA](https://github.com/ultralytics/yolov5/issues/303) | 1280<br>1536          | 55.0<br>**55.8**        | 72.7<br>**72.7**   | 3136<br>-                    | 26.2<br>-                     | 19.4<br>-                      | 140.7<br>-         | 209.8<br>-             |
 
 ## 3. Web service
+This web services was developed with **[FastAPI](https://fastapi.tiangolo.com/)**, a modern and fast (high-performance) web framework for building APIs with Python +3.7. And also with **Torch** library, specifically with the pre-trained model repository **[Torch Hub](https://pytorch.org/hub/)**.
 
-TODO:
-- scripts
-- API
-    - JSON output
-    - Image labeled output
+### App structure:
+- **[app.py](https://github.com/pipe11/object_detection_api/blob/master/app.py)**: It is used as the main script to launch the FastAPI app, itincludes 2 POST methods depending of the output required: JSON or image labeled.
+- **[model.py](https://github.com/pipe11/object_detection_api/blob/master/model.py)**: This script is in charge of loading the model and generating the inference predictions
+- **[image_transformation.py](https://github.com/pipe11/object_detection_api/blob/master/image_transformation.py)**: This script is applied to rescale the input image to make it ready for prediction and finally it also includes a function to transform the prediction result into an image with the detection labels.
 
 ## 4. References
 
