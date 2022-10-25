@@ -59,7 +59,7 @@ Finally, go to [http://localhost:8000/docs](http://localhost:8000/docs), check t
 - **POST json-output**
 - **POST image-output**
 
-Collections file: [**collection_object_detection_api_local**](ttps://github.com/pipe11/object_detection_api/blob/master/collection_object_detection_api_local)  for other API frameworks such us [**Postman**](https://www.postman.com/) or [**Thunder Client**](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)
+Collections file: [**collection_object_detection_api_local**](https://github.com/pipe11/object_detection_api/blob/master/collection_object_detection_api_local)  for other API frameworks such us [**Postman**](https://www.postman.com/) or [**Thunder Client**](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)
 </details>
 
 ## 1. Introduction
