@@ -18,7 +18,7 @@
 <details closed>
 <summary>Install and start using local service without Docker</summary>
 
-Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a
+Clone repo and install [requirements.txt](https://github.com/pipe11/object_detection_api/blob/master/requirements.txt) in a
 [**Python>=3.7.0**](https://www.python.org/) environment, then launch the app:
 
 ```bash
@@ -31,13 +31,15 @@ Finally, go to [http://localhost:8000/docs](http://localhost:8000/docs), check t
 - **POST json-output**
 - **POST image-output**
 
+Collections file: [**collection_object_detection_api_local**](ttps://github.com/pipe11/object_detection_api/blob/master/collection_object_detection_api_local)  for other API frameworks such us [**Postman**](https://www.postman.com/) or [**Thunder Client**](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)
+
 </details>
 
 <details open>
 <summary>Install, container deployment in Docker and run the service</summary>
 
-Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a
-[**Python>=3.7.0**](https://www.python.org/) environment, then launch the app:
+Clone repo and install [**requirements.txt**](https://github.com/pipe11/object_detection_api/blob/master/requirements.txt) in a
+[**Python>=3.7.0**](https://www.python.org/) environment, then open [**Docker deskopt**](https://www.docker.com/products/docker-desktop) and finally launch the app:
 
 ```bash
 git clone https://github.com/pipe11/object_detection_api  # clone
